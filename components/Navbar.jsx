@@ -4,7 +4,7 @@ import Link from "next/link";
 function Navbar() {
   return (
     <>
-      <header className=" bg-emerald-100 flex flex-col  items-center justify-around">
+      <header className=" bg-emerald-100 flex flex-col lg:flex-row  items-center justify-around">
         <div className=" font-bold font-mono text-center text-sm items-center justify-between">
           <Image
             alt="logo.png"
@@ -15,7 +15,7 @@ function Navbar() {
           />
           <h1>Problem Listing.....</h1>
         </div>
-        <div className="w-auto lg:w-auto">
+        <div className="w-auto lg:w-1/2">
           <nav className="  text-xl active:text-red flex items-center justify-evenly">
             <Link href="/">
               <div className="active:text-red-500 hover:scale-110 cursor-pointer ">

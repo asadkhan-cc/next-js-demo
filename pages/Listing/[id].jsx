@@ -2,7 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-// const getStaticPaths = async (asas) => {
+// const getStaticPaths = async () => {
 //   const res = await axios.get("https://jsonplaceholder.typicode.com/users");
 //   const data = await res.data;
 //   const paths = data.map((elem) => {
