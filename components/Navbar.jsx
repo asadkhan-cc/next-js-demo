@@ -1,7 +1,16 @@
 import Image from "next/image";
 import logo from "../public/logo.png";
 import Link from "next/link";
+import { signin, signout } from "next-auth";
 function Navbar() {
+  const SignInHandeler = (e) => {
+    e.preventDefault();
+    signin();
+  };
+  const SignOutHandeler = (e) => {
+    e.preventDefault();
+    signout();
+  };
   return (
     <>
       <header className=" bg-emerald-100 flex flex-col lg:flex-row  items-center justify-around">
@@ -36,6 +45,22 @@ function Navbar() {
               <div className="active:text-red-500 hover:scale-110 cursor-pointer ">
                 Listings
               </div>
+            </Link>
+            <Link href="/api/auth/signin">
+              <button
+                onClick={SignInHandeler}
+                className="active:text-red-500 hover:scale-110 cursor-pointer "
+              >
+                Login
+              </button>
+            </Link>{" "}
+            <Link href="/api/auth/signout">
+              <button
+                onClick={SignOutHandeler}
+                className="active:text-red-500 hover:scale-110 cursor-pointer "
+              >
+                Logout
+              </button>
             </Link>
           </nav>
         </div>

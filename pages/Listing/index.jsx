@@ -1,8 +1,8 @@
 import axios from "axios";
 import User from "../../components/User";
 
-const Listing = ({ data }) => {
-  // console.log(data);
+const Listing = ({ data, contex }) => {
+  // console.log(contex);
 
   return (
     <>
