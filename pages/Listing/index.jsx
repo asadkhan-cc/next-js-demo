@@ -1,18 +1,21 @@
 import axios from "axios";
+import Auth from "../../components/Auth";
 import User from "../../components/User";
 
 const Listing = ({ data, contex }) => {
   // console.log(contex);
 
   return (
-    <>
-      <h1 className="text-3xl font-bold m-3 p-5 text-center">User Names</h1>
-      <div className="flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3">
-        {data.map((elem) => {
-          return <User data={elem} key={elem.id}></User>;
-        })}
-      </div>
-    </>
+    <Auth>
+      <>
+        <h1 className="text-3xl font-bold m-3 p-5 text-center">User Names</h1>
+        <div className="flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3">
+          {data.map((elem) => {
+            return <User data={elem} key={elem.id}></User>;
+          })}
+        </div>
+      </>
+    </Auth>
   );
 };
 

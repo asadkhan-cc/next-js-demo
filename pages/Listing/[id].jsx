@@ -1,6 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Auth from "../../components/Auth";
 
 // const getStaticPaths = async () => {
 //   const res = await axios.get("https://jsonplaceholder.typicode.com/users");
@@ -43,36 +44,38 @@ const Profile = ({ response }) => {
   //   console.log(response);
   //   console.log(query);
   return (
-    <>
-      <div className="text-center font-medium text-xl w-[90%] relative mx-auto grid-cols-3 my-8 shadow-2xl rounded-lg py-5 hover:bg-zinc-100 hover:shadow-none">
-        <Link href={"/Listing"}>
-          <div className="absolute text-xl text-blue-400 hover:text-blue-600 active:text-red-500 font-light cursor-pointer top-0 left-2">
-            {"< Back"}
-          </div>
-        </Link>
-        <h1 className="text-3xl cursor-pointer font-medium text-sky-500">
-          {data.name}
-        </h1>
-        <br />
-        <div className="w-72 mx-auto text-left">
-          <h1>
-            UserName: <span className="font-normal">{data.username}</span>
+    <Auth>
+      <>
+        <div className="text-center font-medium text-xl w-[90%] relative mx-auto grid-cols-3 my-8 shadow-2xl rounded-lg py-5 hover:bg-zinc-100 hover:shadow-none">
+          <Link href={"/Listing"}>
+            <div className="absolute text-xl text-blue-400 hover:text-blue-600 active:text-red-500 font-light cursor-pointer top-0 left-2">
+              {"< Back"}
+            </div>
+          </Link>
+          <h1 className="text-3xl cursor-pointer font-medium text-sky-500">
+            {data.name}
           </h1>
-          <p>
-            Phone: <span className="font-normal">{data.phone}</span>
-          </p>
-          <p>
-            Email: <span className="font-normal">{data.email}</span>
-          </p>
-          <a>
-            Website:{" "}
-            <span className="text-sky-800 cursor-pointer active:text-red-500">
-              {data.website}
-            </span>{" "}
-          </a>
+          <br />
+          <div className="w-72 mx-auto text-left">
+            <h1>
+              UserName: <span className="font-normal">{data.username}</span>
+            </h1>
+            <p>
+              Phone: <span className="font-normal">{data.phone}</span>
+            </p>
+            <p>
+              Email: <span className="font-normal">{data.email}</span>
+            </p>
+            <a>
+              Website:{" "}
+              <span className="text-sky-800 cursor-pointer active:text-red-500">
+                {data.website}
+              </span>{" "}
+            </a>
+          </div>
         </div>
-      </div>
-    </>
+      </>
+    </Auth>
   );
 };
 
